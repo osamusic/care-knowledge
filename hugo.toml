@@ -1,0 +1,71 @@
+baseURL = "https://osamusic.github.io/care-knowledge/"
+languageCode = "ja"
+title = "Yorisoi Knowledge"
+theme = "PaperMod"
+enableRobotsTXT = true
+buildDrafts = false
+hasCJKLanguage = true
+
+[params]
+  mainSections = ["kiso", "care", "seido", "iryo", "kazoku"]
+  DateFormat = "2006年1月2日"
+  author = "osamusic"
+  description = "認知症のケア・介護・医療・制度の知識を体系的にまとめたナレッジベースです。"
+  defaultTheme = "auto"
+  ShowReadingTime = true
+  ShowShareButtons = false
+  ShowPostNavLinks = true
+  ShowBreadCrumbs = true
+  ShowCodeCopyButtons = true
+  ShowToc = true
+
+  [params.homeInfoParams]
+    Title = "Yorisoi Knowledge — よりそいナレッジ"
+    Content = "認知症とともに歩むご家族・ケアに携わる方のための知識ベースです。基礎知識・接し方・制度・医療・ご家族自身のケアまで、落ち着いて読める形でまとめています。最新ニュースは姉妹サイト [Yorisoi Daily](https://osamusic.github.io/care-news/) をご覧ください。"
+
+  [params.fuseOpts]
+    isCaseSensitive = false
+    shouldSort = true
+    minMatchCharLength = 1
+    keys = ["title", "permalink", "summary", "content"]
+
+  [[params.socialIcons]]
+    name = "rss"
+    url = "index.xml"
+
+[menu]
+  [[menu.main]]
+    name = "基礎知識"
+    url = "/kiso/"
+    weight = 10
+  [[menu.main]]
+    name = "ケア・接し方"
+    url = "/care/"
+    weight = 20
+  [[menu.main]]
+    name = "制度・サービス"
+    url = "/seido/"
+    weight = 30
+  [[menu.main]]
+    name = "医療・くすり"
+    url = "/iryo/"
+    weight = 40
+  [[menu.main]]
+    name = "家族のケア"
+    url = "/kazoku/"
+    weight = 50
+  [[menu.main]]
+    name = "用語集"
+    url = "/glossary/"
+    weight = 60
+  [[menu.main]]
+    name = "検索"
+    url = "/search/"
+    weight = 70
+  [[menu.main]]
+    name = "ニュース ↗"
+    url = "https://osamusic.github.io/care-news/"
+    weight = 80
+
+[outputs]
+  home = ["HTML", "RSS", "JSON"]

@@ -1,0 +1,113 @@
+/* カラーテーマ: よりそいオレンジ (認知症支援のシンボルカラー) */
+:root {
+  --primary: #d2691e;
+  --secondary: #e8935a;
+  --theme: #fdf8f2;
+  --entry: #ffffff;
+  --border: #f0dcc8;
+  --content: #3a2e26;
+  --hljs-bg: #3a2a1e;
+  --code-bg: #faeede;
+  --header-bg: #8a4a1c;
+}
+
+.dark {
+  --primary: #e8935a;
+  --secondary: #f2b98a;
+  --theme: #211711;
+  --entry: #2e211a;
+  --border: #45322a;
+  --content: #f5ece4;
+  --hljs-bg: #211711;
+  --code-bg: #322620;
+  --header-bg: #1a100a;
+}
+
+/* ヘッダー */
+.header {
+  background: var(--header-bg);
+}
+
+.header .logo a,
+.header nav a {
+  color: #f8ede2 !important;
+}
+
+/* トップページの説明ボックス */
+.home-info-params-title {
+  font-size: 1.6rem;
+  color: var(--primary);
+}
+
+/* 記事カード */
+.post-entry {
+  border-left: 3px solid var(--primary);
+  transition: border-color 0.2s;
+}
+
+.post-entry:hover {
+  border-left-color: var(--secondary);
+}
+
+/* タグ（一覧・記事共通） */
+.post-tags a,
+.terms-tags a {
+  background: var(--code-bg);
+  color: var(--primary);
+  border: 1px solid var(--border);
+  border-radius: 4px;
+  padding: 2px 8px;
+  font-size: 0.8rem;
+}
+
+/* 記事ページ: タイトル */
+.post-header .post-title {
+  color: var(--primary);
+}
+
+/* 記事ページ: メタ情報（日付など） */
+.post-meta {
+  color: var(--secondary);
+}
+
+/* 記事ページ: 見出し */
+.post-content h1,
+.post-content h2,
+.post-content h3,
+.post-content h4 {
+  color: var(--primary);
+  border-left: 4px solid var(--secondary);
+  padding-left: 0.6em;
+}
+
+/* 記事ページ: 水平線 */
+.post-content hr {
+  border-color: var(--border);
+}
+
+/* 記事ページ: テーブル */
+.post-content table th {
+  background: var(--primary);
+  color: #fff;
+}
+
+.post-content table tr:nth-child(even) {
+  background: var(--code-bg);
+}
+
+/* 記事ページ: インラインコード */
+.post-content code {
+  background: var(--code-bg);
+  color: var(--primary);
+  border-radius: 3px;
+  padding: 1px 5px;
+}
+
+/* 記事ページ: ナビゲーション */
+.paginav a {
+  border-color: var(--border);
+}
+
+.paginav .title {
+  color: var(--primary);
+}
