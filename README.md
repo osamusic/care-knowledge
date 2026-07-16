@@ -47,7 +47,19 @@ hugo server
 python3 scripts/update_glossary.py --dry-run   # ローカル確認（../care-news を参照）
 ```
 
-「新着のことば」に溜まった語は、適宜手動で下のカテゴリーへ移す（移動後も重複追加はされない）。
+### カテゴリー自動分類（ローカル・週1回）
+
+「新着のことば」に溜まった語は、`scripts/classify_glossary.py` が LLM（OpenRouter、
+キーは環境変数 or `../care-news-code/.env` を参照）で4カテゴリーへ分類して移動する。
+**APIキーを使うため GitHub Actions では動かさず、ローカル cron（毎週日曜 13:00）で
+`scripts/classify_and_push.sh` を実行**（分類 → 変更があれば commit & push → 自動デプロイ）。
+
+```sh
+python3 scripts/classify_glossary.py --dry-run   # 分類結果の確認のみ
+```
+
+モデルは `CLASSIFY_MODEL` で変更可（既定: deepseek/deepseek-chat）。判断に迷う語は
+「保留」として新着に残る。移動後の語が再追加されることはない。
 
 ## デプロイ
 
