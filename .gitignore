@@ -2,3 +2,6 @@ public/
 resources/
 .hugo_build.lock
 themes/
+
+# 元画像（大容量のためコミットしない）
+icon.png

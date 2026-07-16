@@ -9,6 +9,17 @@ hasCJKLanguage = true
 [params]
   mainSections = ["kiso", "care", "seido", "iryo", "kazoku"]
   DateFormat = "2006年1月2日"
+  images = ["og-image.jpg"]
+
+  [params.assets]
+    favicon = "favicon.ico"
+    favicon16x16 = "favicon-16x16.png"
+    favicon32x32 = "favicon-32x32.png"
+    apple_touch_icon = "apple-touch-icon.png"
+
+  [params.label]
+    icon = "icon-64.png"
+    iconHeight = 30
   author = "osamusic"
   description = "認知症のケア・介護・医療・制度の知識を体系的にまとめたナレッジベースです。"
   defaultTheme = "auto"
@@ -21,7 +32,7 @@ hasCJKLanguage = true
 
   [params.homeInfoParams]
     Title = "Yorisoi Knowledge — よりそいナレッジ"
-    Content = "認知症とともに歩むご家族・ケアに携わる方のための知識ベースです。基礎知識・接し方・制度・医療・ご家族自身のケアまで、落ち着いて読める形でまとめています。最新ニュースは姉妹サイト [Yorisoi Daily](https://osamusic.github.io/care-news/) をご覧ください。"
+    Content = "![よりそいのマスコット](mascot.jpg)\n\n認知症とともに歩むご家族・ケアに携わる方のための知識ベースです。基礎知識・接し方・制度・医療・ご家族自身のケアまで、落ち着いて読める形でまとめています。最新ニュースは姉妹サイト [Yorisoi Daily](https://osamusic.github.io/care-news/) をご覧ください。"
 
   [params.fuseOpts]
     isCaseSensitive = false

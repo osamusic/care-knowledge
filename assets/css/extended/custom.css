@@ -39,6 +39,21 @@
   color: var(--primary);
 }
 
+/* トップページ: マスコット画像 */
+.home-info .entry-content img {
+  display: block;
+  max-width: 420px;
+  width: 100%;
+  margin: 0 auto 1rem;
+  border-radius: 16px;
+  border: 1px solid var(--border);
+}
+
+/* ヘッダー: ロゴアイコンを丸く */
+.header .logo a img {
+  border-radius: 50%;
+}
+
 /* 記事カード */
 .post-entry {
   border-left: 3px solid var(--primary);
