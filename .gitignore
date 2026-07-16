@@ -6,3 +6,4 @@ themes/
 # 元画像（大容量のためコミットしない）
 icon.png
 logs/
+.claude/
