@@ -1,0 +1,46 @@
+name: Update glossary from care-news
+
+on:
+  schedule:
+    - cron: '45 3 * * *' # 12:45 JST（care-news パイプライン 12:00 JST の後）
+  workflow_dispatch:
+
+permissions:
+  contents: write
+  actions: write
+
+concurrency:
+  group: glossary
+  cancel-in-progress: false
+
+jobs:
+  update:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout care-knowledge
+        uses: actions/checkout@v4
+
+      - name: Checkout care-news
+        uses: actions/checkout@v4
+        with:
+          repository: osamusic/care-news
+          path: care-news
+
+      - name: Update glossary
+        run: python3 scripts/update_glossary.py --news-dir care-news
+
+      - name: Commit and trigger deploy
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          if git diff --quiet content/glossary.md; then
+            echo "用語集に変更なし。デプロイをスキップします。"
+            exit 0
+          fi
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add content/glossary.md
+          git commit -m "用語集: きょうのことばから自動追加 ($(TZ=Asia/Tokyo date +%Y-%m-%d))"
+          git push
+          # GITHUB_TOKEN による push は他のワークフローを起動しないため、明示的にデプロイを実行する
+          gh workflow run hugo.yml

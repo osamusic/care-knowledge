@@ -36,6 +36,19 @@ hugo server
 - トーンは Yorisoi Daily と同じ：やさしい言葉、断定しすぎない、必ず「相談先」につなげる
 - 医療・制度の記事には末尾に免責の一文を入れる
 
+## 用語集の自動更新
+
+`.github/workflows/glossary.yml` が毎日 12:45 JST（care-news パイプライン 12:00 JST の後）に
+`scripts/update_glossary.py` を実行し、care-news 全記事の「きょうのことば」から
+用語集に未収録の語（括弧内の別名も含めて重複判定）を「新着のことば」セクションへ
+出典リンク付きで追記 → コミット → デプロイする。手動実行は Actions の workflow_dispatch か:
+
+```sh
+python3 scripts/update_glossary.py --dry-run   # ローカル確認（../care-news を参照）
+```
+
+「新着のことば」に溜まった語は、適宜手動で下のカテゴリーへ移す（移動後も重複追加はされない）。
+
 ## デプロイ
 
 `main` ブランチへの push で GitHub Pages に自動デプロイされます。
