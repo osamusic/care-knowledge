@@ -32,7 +32,7 @@ hasCJKLanguage = true
 
   [params.homeInfoParams]
     Title = "Yorisoi Knowledge — よりそいナレッジ"
-    Content = "![よりそいのマスコット](mascot.jpg)\n\n認知症とともに歩むご家族・ケアに携わる方のための知識ベースです。基礎知識・接し方・制度・医療・ご家族自身のケアまで、落ち着いて読める形でまとめています。最新ニュースは姉妹サイト [Yorisoi Daily](https://yorisoi-news.osamusic.org/) をご覧ください。"
+    Content = "![よりそいのマスコット](mascot.jpg)\n\n認知症とともに歩むご家族・ケアに携わる方のための知識ベースです。基礎知識・接し方・制度・医療・ご家族自身のケアまで、落ち着いて読める形でまとめています。初めての方は[「はじめての方へ」](/start/)から、状況に合った読む順番をご案内します。最新ニュースは姉妹サイト [Yorisoi Daily](https://yorisoi-news.osamusic.org/) をご覧ください。"
 
   [params.fuseOpts]
     isCaseSensitive = false
@@ -45,6 +45,10 @@ hasCJKLanguage = true
     url = "index.xml"
 
 [menu]
+  [[menu.main]]
+    name = "はじめての方へ"
+    url = "/start/"
+    weight = 5
   [[menu.main]]
     name = "基礎知識"
     url = "/kiso/"
@@ -69,6 +73,14 @@ hasCJKLanguage = true
     name = "用語集"
     url = "/glossary/"
     weight = 60
+  [[menu.main]]
+    name = "チェックリスト"
+    url = "/checklist/"
+    weight = 62
+  [[menu.main]]
+    name = "FAQ"
+    url = "/faq/"
+    weight = 64
   [[menu.main]]
     name = "検索"
     url = "/search/"
