@@ -14,7 +14,7 @@ import re
 import sys
 from pathlib import Path
 
-NEWS_SITE_URL = "https://osamusic.github.io/care-news"
+NEWS_SITE_URL = "https://yorisoi-news.osamusic.org"
 NEW_SECTION_HEADER = "## 新着のことば"
 NEW_SECTION_INTRO = (
     f"[Yorisoi Daily]({NEWS_SITE_URL}/) の「きょうのことば」から自動で追加された用語です。"

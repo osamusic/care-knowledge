@@ -1,4 +1,4 @@
-baseURL = "https://osamusic.github.io/care-knowledge/"
+baseURL = "https://yorisoi.osamusic.org/"
 languageCode = "ja"
 title = "Yorisoi Knowledge"
 theme = "PaperMod"
@@ -32,7 +32,7 @@ hasCJKLanguage = true
 
   [params.homeInfoParams]
     Title = "Yorisoi Knowledge — よりそいナレッジ"
-    Content = "![よりそいのマスコット](mascot.jpg)\n\n認知症とともに歩むご家族・ケアに携わる方のための知識ベースです。基礎知識・接し方・制度・医療・ご家族自身のケアまで、落ち着いて読める形でまとめています。最新ニュースは姉妹サイト [Yorisoi Daily](https://osamusic.github.io/care-news/) をご覧ください。"
+    Content = "![よりそいのマスコット](mascot.jpg)\n\n認知症とともに歩むご家族・ケアに携わる方のための知識ベースです。基礎知識・接し方・制度・医療・ご家族自身のケアまで、落ち着いて読める形でまとめています。最新ニュースは姉妹サイト [Yorisoi Daily](https://yorisoi-news.osamusic.org/) をご覧ください。"
 
   [params.fuseOpts]
     isCaseSensitive = false
@@ -75,7 +75,7 @@ hasCJKLanguage = true
     weight = 70
   [[menu.main]]
     name = "ニュース ↗"
-    url = "https://osamusic.github.io/care-news/"
+    url = "https://yorisoi-news.osamusic.org/"
     weight = 80
 
 [outputs]

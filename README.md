@@ -1,7 +1,7 @@
 # Yorisoi Knowledge — よりそいナレッジ
 
 認知症のケア・介護・医療・制度の知識を体系的にまとめたナレッジサイト。
-日刊ニュースサイト [Yorisoi Daily (care-news)](https://osamusic.github.io/care-news/) の姉妹サイトです。
+日刊ニュースサイト [Yorisoi Daily (care-news)](https://yorisoi-news.osamusic.org/) の姉妹サイトです。
 
 ## 構成
 
