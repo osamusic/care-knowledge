@@ -126,3 +126,42 @@
 .paginav .title {
   color: var(--primary);
 }
+
+/* 印刷用: チェックリスト等を紙で使えるように */
+@media print {
+  .header,
+  .top-link,
+  .paginav,
+  .post-footer,
+  .footer,
+  .toc,
+  .breadcrumbs,
+  .share-buttons {
+    display: none !important;
+  }
+
+  body,
+  .post-content,
+  .post-content h1,
+  .post-content h2,
+  .post-content h3,
+  .post-content h4 {
+    color: #000;
+    background: #fff;
+  }
+
+  .post-content h2,
+  .post-content h3 {
+    border-left-color: #000;
+  }
+
+  .post-content a {
+    color: #000;
+    text-decoration: none;
+  }
+
+  .main {
+    margin: 0;
+    max-width: 100%;
+  }
+}
