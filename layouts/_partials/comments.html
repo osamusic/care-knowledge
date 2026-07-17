@@ -1,0 +1,38 @@
+<div class="like-box">
+  <p class="like-question">この記事は役に立ちましたか？</p>
+  <button type="button" id="like-btn" class="like-btn">🍊 役に立った<span id="like-count" class="like-count"></span></button>
+  <p id="like-thanks" class="like-thanks" hidden>ありがとうございます。励みになります 🍊</p>
+</div>
+<script>
+  (function () {
+    var btn = document.getElementById("like-btn");
+    var count = document.getElementById("like-count");
+    var thanks = document.getElementById("like-thanks");
+    var api = "/likes?path=" + encodeURIComponent(location.pathname);
+    var storageKey = "liked:" + location.pathname;
+    function show(n) {
+      count.textContent = n > 0 ? " " + n : "";
+    }
+    function liked() {
+      try { return !!localStorage.getItem(storageKey); } catch (e) { return false; }
+    }
+    fetch(api)
+      .then(function (r) { return r.json(); })
+      .then(function (d) { show(d.likes); })
+      .catch(function () {});
+    if (liked()) {
+      btn.disabled = true;
+      thanks.hidden = false;
+    }
+    btn.addEventListener("click", function () {
+      if (liked()) return;
+      btn.disabled = true;
+      thanks.hidden = false;
+      try { localStorage.setItem(storageKey, "1"); } catch (e) {}
+      fetch(api, { method: "POST" })
+        .then(function (r) { return r.json(); })
+        .then(function (d) { show(d.likes); })
+        .catch(function () {});
+    });
+  })();
+</script>

@@ -12,6 +12,16 @@ hasCJKLanguage = true
   mainSections = ["kiso", "care", "seido", "iryo", "kazoku"]
   DateFormat = "2006年1月2日"
   images = ["og-image.jpg"]
+  author = "osamusic"
+  description = "認知症のケア・介護・医療・制度の知識を体系的にまとめたナレッジベースです。"
+  defaultTheme = "auto"
+  ShowReadingTime = true
+  ShowShareButtons = false
+  ShowPostNavLinks = true
+  ShowBreadCrumbs = true
+  ShowCodeCopyButtons = true
+  ShowToc = true
+  comments = true
 
   [params.assets]
     favicon = "favicon.ico"
@@ -22,15 +32,6 @@ hasCJKLanguage = true
   [params.label]
     icon = "icon-64.png"
     iconHeight = 30
-  author = "osamusic"
-  description = "認知症のケア・介護・医療・制度の知識を体系的にまとめたナレッジベースです。"
-  defaultTheme = "auto"
-  ShowReadingTime = true
-  ShowShareButtons = false
-  ShowPostNavLinks = true
-  ShowBreadCrumbs = true
-  ShowCodeCopyButtons = true
-  ShowToc = true
 
   [params.homeInfoParams]
     Title = "Yorisoi Knowledge — よりそいナレッジ"
