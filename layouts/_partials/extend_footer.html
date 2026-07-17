@@ -1,0 +1,17 @@
+{{- /* アクセシビリティ補正: テーマ由来の細かい問題を修正 */ -}}
+<script>
+  (function () {
+    // 装飾扱いのタスクリスト用チェックボックス（disabled）を支援技術から隠す
+    document.querySelectorAll('.post-content input[type=checkbox][disabled]').forEach(function (el) {
+      el.setAttribute('aria-hidden', 'true');
+    });
+    // nav ランドマークが複数あるため、名前を付けて区別できるようにする
+    var header = document.querySelector('nav.header-nav');
+    if (header) header.setAttribute('aria-label', 'メインメニュー');
+    var pagination = document.querySelector('nav.pagination');
+    if (pagination) pagination.setAttribute('aria-label', 'ページ送り');
+    // ロゴ画像の alt="" と aria-label="logo" の矛盾を解消
+    var logo = document.querySelector('.logo img[aria-label]');
+    if (logo) logo.removeAttribute('aria-label');
+  })();
+</script>

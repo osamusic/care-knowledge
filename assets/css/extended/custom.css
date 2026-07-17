@@ -1,7 +1,8 @@
 /* カラーテーマ: よりそいオレンジ (認知症支援のシンボルカラー) */
 :root {
-  --primary: #d2691e;
-  --secondary: #e8935a;
+  /* WCAG AA: primary 4.7:1以上・secondary 4.9:1以上 (対 --theme / --code-bg) */
+  --primary: #a8530f;
+  --secondary: #9a5730;
   --theme: #fdf8f2;
   --entry: #ffffff;
   --border: #f0dcc8;
@@ -31,6 +32,15 @@
 .header .logo a,
 .header nav a {
   color: #f8ede2 !important;
+}
+
+/* メニュー: 横スクロールで項目が隠れないように折り返す */
+.menu {
+  flex-wrap: wrap;
+  white-space: normal;
+  overflow-x: visible;
+  line-height: 2.4;
+  align-self: center;
 }
 
 /* トップページの説明ボックス */
