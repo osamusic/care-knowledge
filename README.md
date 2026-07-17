@@ -7,7 +7,18 @@
 
 - Hugo + [PaperMod](https://github.com/adityatelange/hugo-PaperMod) テーマ（care-news と共通）
 - GitHub Pages に GitHub Actions（`.github/workflows/hugo.yml`）で自動デプロイ
+- ドメインは Cloudflare プロキシ経由（DNS はオレンジ雲・SSL モード「フル」）
 - テーマカラーは「よりそいオレンジ」（`assets/css/extended/custom.css`、care-news と共通）
+
+## 「役に立った」ボタン
+
+各記事の末尾に表示されるフィードバックボタン（care-news と共通の仕組み）。
+
+- 表示部: `layouts/_partials/comments.html`（PaperMod の comments フックを利用、
+  `hugo.toml` の `params.comments = true` で有効化）
+- 集計 API: 同一ドメインの `/likes?path=<記事パス>`。実体は Cloudflare Worker
+  `yorisoi-likes`（`~/ai/yorisoi-likes`、KV に「ホスト名:パス」単位で保存）
+- 二重押しは localStorage で防止。API 変更時は `wrangler deploy` で反映
 
 ## コンテンツ構成
 
