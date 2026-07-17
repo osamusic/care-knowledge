@@ -7,3 +7,4 @@ themes/
 icon.png
 logs/
 .claude/
+.playwright-mcp/

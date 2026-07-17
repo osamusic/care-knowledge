@@ -1,6 +1,7 @@
 baseURL = "https://yorisoi.osamusic.org/"
 languageCode = "ja"
 defaultContentLanguage = "ja"
+disableHugoGeneratorInject = true
 title = "Yorisoi Knowledge"
 theme = "PaperMod"
 enableRobotsTXT = true

@@ -1,0 +1,5 @@
+{{- /* セキュリティ強化: GitHub Pages ではHTTPレスポンスヘッダを設定できないため meta で代替する。
+     PaperMod がインラインscript/styleを使うため unsafe-inline は許可（外部オリジンの読み込みは全て遮断） */ -}}
+<meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline'; style-src 'self' 'unsafe-inline'; img-src 'self' data:; connect-src 'self'; font-src 'self'; object-src 'none'; base-uri 'self'; form-action 'self'">
+{{- /* 医療・介護という繊細なテーマのため、外部サイトへ遷移元を渡さない */ -}}
+<meta name="referrer" content="no-referrer">

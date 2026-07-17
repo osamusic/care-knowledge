@@ -22,15 +22,22 @@ jobs:
         uses: actions/checkout@v4
 
       - name: Setup Hugo
+        env:
+          # サプライチェーン対策: latest ではなく検証済みバージョンに固定
+          HUGO_VERSION: "0.164.0"
         run: |
-          HUGO_VERSION=$(curl -s https://api.github.com/repos/gohugoio/hugo/releases/latest | jq -r '.tag_name' | sed 's/v//')
           wget -q -O hugo.tar.gz "https://github.com/gohugoio/hugo/releases/download/v${HUGO_VERSION}/hugo_extended_${HUGO_VERSION}_linux-amd64.tar.gz"
           tar -xzf hugo.tar.gz
           sudo mv hugo /usr/local/bin/
           hugo version
 
       - name: Clone PaperMod theme
-        run: git clone https://github.com/adityatelange/hugo-PaperMod themes/PaperMod --depth=1
+        env:
+          # サプライチェーン対策: master 追従ではなく検証済みコミットに固定
+          PAPERMOD_COMMIT: "154d006e0182dfc7da38008323976b02e6bfab4a"
+        run: |
+          git clone https://github.com/adityatelange/hugo-PaperMod themes/PaperMod
+          git -C themes/PaperMod checkout --detach "$PAPERMOD_COMMIT"
 
       - name: Build
         run: hugo --minify
