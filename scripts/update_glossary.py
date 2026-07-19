@@ -26,7 +26,7 @@ def name_tokens(name: str) -> set[str]:
     """用語名を比較用トークンに分解する。「MCI（軽度認知障害）」→ {mci, 軽度認知障害}"""
     tokens = set()
     for part in re.split(r"[（）()]", name):
-        part = re.sub(r"[\s・、〜～]", "", part).lower()
+        part = re.sub(r"[\s・、〜～:：]", "", part).lower()
         if part:
             tokens.add(part)
     return tokens
@@ -59,7 +59,8 @@ def parse_post(path: Path) -> tuple[str, str, list[tuple[str, str]]]:
         if not m:
             i += 1
             continue
-        term, definition = m.group(1).strip(), m.group(2).strip()
+        # care-news 側は「**用語:** 説明」形式のことがあり、コロンが太字内に残る
+        term, definition = m.group(1).strip().rstrip(":："), m.group(2).strip()
         i += 1
         if not definition:
             # 用語だけの行: 続く行を空行または次の用語まで説明として読む
