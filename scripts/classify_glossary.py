@@ -8,7 +8,7 @@
     python3 scripts/classify_glossary.py [--dry-run]
 
 APIキー: 環境変数 OPENROUTER_API_KEY、なければ .env → ../care-news-code/.env の順に読む。
-モデル: 環境変数 CLASSIFY_MODEL（既定: deepseek/deepseek-chat）
+モデル: 環境変数 CLASSIFY_MODEL（既定: deepseek/deepseek-v4-flash）
 """
 
 import argparse
@@ -112,7 +112,7 @@ def main() -> int:
     if not api_key:
         print("エラー: OPENROUTER_API_KEY が見つかりません（環境変数 / .env / ../care-news-code/.env）", file=sys.stderr)
         return 1
-    model = os.environ.get("CLASSIFY_MODEL", "deepseek/deepseek-chat")
+    model = os.environ.get("CLASSIFY_MODEL", "deepseek/deepseek-v4-flash")
 
     result = classify(entries, api_key, model)
 
